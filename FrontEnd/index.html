@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="assets/images/logo/logomaskotberwarna.png" />
+    <title>SmutOur | Sumatra Utara Tour</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="header" id="custom-background">
+        <nav class="container-navbar">
+            <div class="navbar">
+                <div class="logo">
+                    <a href="index.html"><img src="assets/images/logo/colorlogowordmark.png" alt="SmutOur" width="220 em"></a>
+                </div>
+                <nav>
+                    <ul id="MenuItems">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="team.html">Our Team</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </nav>    
+        <div class="container">
+            <div class="row">
+                <div class="col-1">
+                    <h1>Sumatera Utara Tour</h1>
+                    <p> 
+                        SmutOur adalah penyedia jasa layanan travel yang beroperasi di
+                        wilayah Sumatera Utara, Indonesia. Menyediakan berbagai layanan
+                        perjalanan yang mencakup festival, pameran, dan layanan
+                        berkaitan lainnya di wilayah Sumatera Utara. Dengan pelayanan
+                        yang profesional dan berpengalaman, SmutOur berkomitmen untuk
+                        memberikan pengalaman perjalanan yang tak terlupakan kepada
+                        pelanggan mereka, menjelajahi keindahan alam dan budaya unik
+                        Sumatera Utara.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Feadtued Categories -->
+
+    <div class="small-container">
+        <h2 class="title">Festival di Sumatera Utara</h2>
+        <p style="text-align: right;"><a href="fest.html">view all</a></p>
+        <div class="row" id="festView">
+          <script>
+            // Select the HTML element where you want to display the data
+            const festContainer = document.getElementById("festView");
+            // Map the data from the response rows
+            fetch("http://localhost:8000/festival")
+              .then((response) => response.json())
+              .then((data) => {
+                // Map the data from the response rows
+                const festElement = data.rows.slice(0, 4).map((fest) => {
+                  return `
+                    <div class="col-4">
+                        <a href="fest-view.html?id=${fest.id}"><img src="assets/images/uploads/${fest.foto}"></a>
+                        <a href="fest-view.html?id=${fest.id}"><h4 class="sizetitle">${fest.nama}</h4></a>
+                        <a href="fest-view.html?id=${fest.id}"><p>on <strong>${fest.jadwal}</strong></p></a>
+                        <a href="fest-view.html?id=${fest.id}"><p><strong>${fest.lokasi}</strong></p></a>
+                        <center><a href="fest-booking.html?id=${fest.id}" class="btn-booking" style="color: white;">Booking Now</a></center>
+                    </div>
+                    `;
+                });
+                festContainer.innerHTML = festElement.join("");
+              });
+          </script>
+        </div>
+    </div>
+
+    <!-- Featured Products -->
+
+    <div class="small-container">
+        <h2 class="title">Pameran di Sumatera Utara</h2>
+        <p style="text-align: right;"><a href="pameran.html">view all</a></p>
+        <div class="row" id="pamView">
+          <script>
+            // Select the HTML element where you want to display the data
+            const pamContainer = document.getElementById("pamView");
+            // Map the data from the response rows
+            fetch("http://localhost:8000/pameran")
+              .then((response) => response.json())
+              .then((data) => {
+                // Map the data from the response rows
+                const pamElement = data.data.slice(0, 4).map((pam) => {
+                  return `
+                    <div class="col-4">
+                        <a href="pameran-view.html?id=${pam.id}"><img src="assets/images/uploads/${pam.foto}"></a>
+                        <a href="pameran-view.html?id=${pam.id}"><h4 class="sizetitle">${pam.nama}</h4></a>
+                        <a href="pameran-view.html?id=${pam.id}"><p>on <strong>${pam.jadwal}</strong></p></a>
+                        <a href="pameran-view.html?id=${pam.id}"><p><strong>${pam.lokasi}</strong></p></a>
+                        <center><a href="pameran-booking.html?id=${pam.id}" class="btn-booking" style="color: white;">Booking Now</a></center>
+                    </div>
+                    `;
+                });
+                pamContainer.innerHTML = pamElement.join("");
+              });
+          </script>
+        </div>
+    </div>
+
+    
+
+    <!-- Footer -->
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col-2">
+                    <h1 style="font-size: 50px;">SmutOur.</h1>
+                    <p>
+                        Penyedia jasa travel di Sumatera Utara, Indonesia, yang menawarkan
+                        layanan perjalanan termasuk festival, pameran, dan layanan terkait
+                        lainnya. Dengan pelayanan profesional dan berpengalaman, SmutOur
+                        berdedikasi untuk memberikan pengalaman perjalanan tak terlupakan
+                        kepada pelanggan, memungkinkan mereka menjelajahi keindahan alam
+                        dan budaya unik Sumatera Utara.
+                    </p>
+                </div>
+                
+                <div class="footer-col-4" style="text-align: right;">
+                    <h3>Follow Us</h3>
+                    <ul>
+                        <li><a href="">Facebook</a></li>
+                        <li><a href="">Twitter</a></li>
+                        <li><a href="">Instagram</a></li>
+                        <li><a href="">Youtube</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <p class="copyright">Copyright 2023</p>
+        </div>
+    </div>
+
+    <!-- javascript -->
+
+    <script>
+        var MenuItems = document.getElementById("MenuItems");
+        MenuItems.style.maxHeight = "0px";
+        function menutoggle() {
+            if (MenuItems.style.maxHeight == "0px") {
+                MenuItems.style.maxHeight = "200px"
+            }
+            else {
+                MenuItems.style.maxHeight = "0px"
+            }
+        }
+    </script>
+
+
+    <script src="assets/js/jquery-1.11.1.min.js"></script>
+    <script src="assets/js/jquery.backstretch.min.js"></script>
+    <script src="assets/js/scripts.js"></script>
+
+
+</body>
+
+</html>

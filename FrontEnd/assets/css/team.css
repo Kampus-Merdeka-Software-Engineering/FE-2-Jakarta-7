@@ -1,0 +1,950 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+}
+
+.navbar
+{
+    display: flex;
+    align-items: center;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #358097 !important;
+}
+
+nav{
+    flex: 1;
+    text-align: right;
+}
+nav ul{
+    display: inline-block;
+    list-style-type: none;
+}
+nav ul li{
+    display: inline-block;
+    margin-right: 20px;
+}
+a{
+    text-decoration: none;
+    color: #fff;
+}
+p{
+    color: #fff;
+}
+.container{
+    max-width: 90%;
+    margin: auto;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.container-navbar{
+    max-width: 100%;
+    margin: auto;
+    overflow: hidden;
+    transition: 0.4s; /* Adds a transition effect when the padding is decreased */
+    position: fixed; /* Sticky/fixed navbar */
+    width: 100%;
+    top: 0; /* At the top */
+    z-index: 99; 
+    
+}
+.overlayblue{
+  background-size: cover; 
+  box-shadow: inset 0 0 0 2000px rgba(53,128,151, 0.7);
+}
+
+.container-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+    margin-bottom: 50px;
+  }
+  
+  /* .profile-container:hover */
+  .profile-container {
+    width: 400px;
+    height: 500px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 5px;
+    transition: 1s all ease;
+    margin-left: 40px;
+    margin-right: 40px;
+
+    
+  }
+  
+  .profile-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../images/team/syifa.jpg') no-repeat center center/cover;
+    z-index: -1;
+    opacity: 1;  
+    transition: all .5s ease-in;
+  }
+  
+  .profile-container:hover:before {
+    opacity: 0;
+    transition: all .5s ease;
+  }
+  
+  
+  /* Profile Card Wrapper */
+  .profile-wrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+  
+  .profile-wrapper::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, #358097 0%, #e69c31 100%);
+    transform: skew(30deg) translateX(125%);
+    opacity: 0.9;
+    transition: all 0.6s ease;
+  }
+  
+  .profile-wrapper::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, #358097 0%, #e69c31 100%);
+    transform: skew(30deg) translateX(-125%);
+    opacity: 0.9;
+    transition: all 0.6s ease;
+  }
+  
+  .profile-container:hover .profile-wrapper::after{
+    transform: skew(30deg) translateX(125%);
+    background: linear-gradient(to right, #bc0e0f 0%, #e69c31 100%);
+    
+  }
+  .profile-container:hover .profile-wrapper::before{
+    transform: skew(30deg) translateX(-125%);
+    background: linear-gradient(to right, #bc0e0f 0%, #e69c31 100%);
+  }
+  
+  /* Profile Card */
+  .profile-card {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 1rem 10px;
+    position: relative;
+    opacity: 0;
+    transition: all 0.3s ease;
+  }
+  
+  .profile-container:hover .profile-card {
+    opacity: 1;
+    transition: all 0.6s ease;
+    transition-delay: 0.2s;
+  }
+  
+
+  /* Profile Picture */
+  .profile-card img {
+    display: block;
+    margin: 0 auto;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin: 1rem 0;
+    border: 2px solid transparent;
+    background-image: linear-gradient(white, white), 
+                      linear-gradient(to right, green, gold);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    /* border: 2px solid #1999; */
+    position: relative;
+  }
+  
+  .profile-card  h2 {
+    line-height: 1.2;
+    color: #222;
+  }
+  .profile-card  h4 {
+    line-height: 1.5;
+    color: #444;
+  }
+  
+  .profile-card  p {
+    line-height: 1.2;
+    color: #333;
+    margin: 10px 0;
+  }
+  
+  
+  /* Profile Button */
+  .profile-card a {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    color: #FFFFFF;
+    padding: 8px 20px;
+    margin-top: 1rem;
+    background: #2371ae;
+    border-radius: 50px;
+    background: linear-gradient(to right, #bb47d4 0%, #2371ae 100%);
+  }
+
+  /* profil 2 */
+  .profile-container-2 {
+    width: 400px;
+    height: 500px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 5px;
+    transition: 1s all ease;
+    margin-left: 40px;
+    margin-right: 40px;
+
+    
+  }
+  
+  .profile-container-2::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../images/team/alfiyanto.jpg') no-repeat center center/cover;
+    z-index: -1;
+    opacity: 1;  
+    transition: all .5s ease-in;
+  }
+  
+  .profile-container-2:hover:before {
+    opacity: 0;
+    transition: all .5s ease;
+  }
+  
+  
+  /* Profile Card Wrapper */
+  .profile-wrapper-2 {
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+  
+  .profile-wrapper-2::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, #358097 0%, #e69c31 100%);
+    transform: skew(30deg) translateX(125%);
+    opacity: 0.9;
+    transition: all 0.6s ease;
+  }
+  
+  .profile-wrapper-2::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, #358097 0%, #e69c31 100%);
+    transform: skew(30deg) translateX(-125%);
+    opacity: 0.9;
+    transition: all 0.6s ease;
+  }
+  
+  .profile-container-2:hover .profile-wrapper-2::after{
+    transform: skew(30deg) translateX(125%);
+    background: linear-gradient(to right, #bc0e0f 0%, #e69c31 100%);
+    
+  }
+  .profile-container-2:hover .profile-wrapper-2::before{
+    transform: skew(30deg) translateX(-125%);
+    background: linear-gradient(to right, #bc0e0f 0%, #e69c31 100%);
+  }
+  
+  /* Profile Card */
+  .profile-card-2 {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 1rem 10px;
+    position: relative;
+    opacity: 0;
+    transition: all 0.3s ease;
+  }
+  
+  .profile-container-2:hover .profile-card-2 {
+    opacity: 1;
+    transition: all 0.6s ease;
+    transition-delay: 0.2s;
+  }
+  
+  
+  /* Profile Picture */
+  .profile-card-2 img {
+    display: block;
+    margin: 0 auto;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin: 1rem 0;
+    border: 2px solid transparent;
+    background-image: linear-gradient(white, white), 
+                      linear-gradient(to right, green, gold);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    /* border: 2px solid #1999; */
+    position: relative;
+  }
+  
+  .profile-card-2  h2 {
+    line-height: 1.2;
+    color: #222;
+  }
+  .profile-card-2  h4 {
+    line-height: 1.5;
+    color: #444;
+  }
+  
+  .profile-card-2  p {
+    line-height: 1.2;
+    color: #333;
+    margin: 10px 0;
+  }
+
+  /* Profile Button */
+  .profile-card-2 a {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    color: #FFFFFF;
+    padding: 8px 20px;
+    margin-top: 1rem;
+    background: #2371ae;
+    border-radius: 50px;
+    background: linear-gradient(to right, #bb47d4 0%, #2371ae 100%);
+  }
+
+  /* profil card 3 */
+  /* profil 3 */
+  .profile-container-3 {
+    width: 400px;
+    height: 500px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 5px;
+    transition: 1s all ease;
+    margin-left: 40px;
+    margin-right: 40px;
+
+    
+  }
+  
+  .profile-container-3::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../images/team/debora.jpg') no-repeat center center/cover;
+    z-index: -1;
+    opacity: 1;  
+    transition: all .5s ease-in;
+  }
+  
+  .profile-container-3:hover:before {
+    opacity: 0;
+    transition: all .5s ease;
+  }
+  
+  
+  /* Profile Card Wrapper */
+  .profile-wrapper-3 {
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+  
+  .profile-wrapper-3::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, #358097 0%, #e69c31 100%);
+    transform: skew(30deg) translateX(125%);
+    opacity: 0.9;
+    transition: all 0.6s ease;
+  }
+  
+  .profile-wrapper-3::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, #358097 0%, #e69c31 100%);
+    transform: skew(30deg) translateX(-125%);
+    opacity: 0.9;
+    transition: all 0.6s ease;
+  }
+  
+  .profile-container-3:hover .profile-wrapper-3::after{
+    transform: skew(30deg) translateX(125%);
+    background: linear-gradient(to right, #bc0e0f 0%, #e69c31 100%);
+    
+  }
+  .profile-container-3:hover .profile-wrapper-3::before{
+    transform: skew(30deg) translateX(-125%);
+    background: linear-gradient(to right, #bc0e0f 0%, #e69c31 100%);
+  }
+  
+  /* Profile Card */
+  .profile-card-3 {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 1rem 10px;
+    position: relative;
+    opacity: 0;
+    transition: all 0.3s ease;
+  }
+  
+  .profile-container-3:hover .profile-card-3 {
+    opacity: 1;
+    transition: all 0.6s ease;
+    transition-delay: 0.2s;
+  }
+   
+  
+  /* Profile Picture */
+  .profile-card-3 img {
+    display: block;
+    margin: 0 auto;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin: 1rem 0;
+    border: 2px solid transparent;
+    background-image: linear-gradient(white, white), 
+                      linear-gradient(to right, green, gold);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    /* border: 2px solid #1999; */
+    position: relative;
+  }
+  
+  .profile-card-3  h2 {
+    line-height: 1.2;
+    color: #222;
+  }
+  .profile-card-3  h4 {
+    line-height: 1.5;
+    color: #444;
+  }
+  
+  .profile-card-3  p {
+    line-height: 1.2;
+    color: #333;
+    margin: 10px 0;
+  }
+
+  
+  /* Profile Button */
+  .profile-card-3 a {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    color: #FFFFFF;
+    padding: 8px 20px;
+    margin-top: 1rem;
+    background: #2371ae;
+    border-radius: 50px;
+    background: linear-gradient(to right, #bb47d4 0%, #2371ae 100%);
+  }
+  
+  /* profil card 4 */
+  /* profil 4 */
+  .profile-container-4 {
+    width: 400px;
+    height: 500px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 5px;
+    transition: 1s all ease;
+    margin-left: 40px;
+    margin-right: 40px;
+
+    
+  }
+  
+  .profile-container-4::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../images/team/ninda.png') no-repeat center center/cover;
+    z-index: -1;
+    opacity: 1;  
+    transition: all .5s ease-in;
+  }
+  
+  .profile-container-4:hover:before {
+    opacity: 0;
+    transition: all .5s ease;
+  }
+  
+  
+  /* Profile Card Wrapper */
+  .profile-wrapper-4 {
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+  
+  .profile-wrapper-4::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, #083248 0%, #e69c31 100%);
+    transform: skew(30deg) translateX(125%);
+    opacity: 0.9;
+    transition: all 0.6s ease;
+  }
+  
+  .profile-wrapper-4::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, #083248 0%, #e69c31 100%);
+    transform: skew(30deg) translateX(-125%);
+    opacity: 0.9;
+    transition: all 0.6s ease;
+  }
+  
+  .profile-container-4:hover .profile-wrapper-4::after{
+    transform: skew(30deg) translateX(125%);
+    background: linear-gradient(to right, #bc0e0f 0%, #e69c31 100%);
+    
+  }
+  .profile-container-4:hover .profile-wrapper-4::before{
+    transform: skew(30deg) translateX(-125%);
+    background: linear-gradient(to right, #bc0e0f 0%, #e69c31 100%);
+  }
+  
+  /* Profile Card */
+  .profile-card-4 {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 1rem 10px;
+    position: relative;
+    opacity: 0;
+    transition: all 0.3s ease;
+  }
+  
+  .profile-container-4:hover .profile-card-4 {
+    opacity: 1;
+    transition: all 0.6s ease;
+    transition-delay: 0.2s;
+  }
+  
+  
+  /* Profile Picture */
+  .profile-card-4 img {
+    display: block;
+    margin: 0 auto;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin: 1rem 0;
+    border: 2px solid transparent;
+    background-image: linear-gradient(white, white), 
+                      linear-gradient(to right, green, gold);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    /* border: 2px solid #1999; */
+    position: relative;
+  }
+  
+  .profile-card-4  h2 {
+    line-height: 1.2;
+    color: #222;
+  }
+  .profile-card-4  h4 {
+    line-height: 1.5;
+    color: #444;
+  }
+  
+  .profile-card-4  p {
+    line-height: 1.2;
+    color: #333;
+    margin: 10px 0;
+  }
+
+  /* Profile Button */
+  .profile-card-4 a {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    color: #FFFFFF;
+    padding: 8px 20px;
+    margin-top: 1rem;
+    background: #2371ae;
+    border-radius: 50px;
+    background: linear-gradient(to right, #bb47d4 0%, #2371ae 100%);
+  }
+
+  /* profil card 5 */
+  /* profil 5 */
+  .profile-container-5 {
+    width: 400px;
+    height: 500px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 5px;
+    transition: 1s all ease;
+    margin-left: 40px;
+    margin-right: 40px;
+
+    
+  }
+  
+  .profile-container-5::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../images/team/rio.jpg') no-repeat center center/cover;
+    z-index: -1;
+    opacity: 1;  
+    transition: all .5s ease-in;
+  }
+  
+  .profile-container-5:hover:before {
+    opacity: 0;
+    transition: all .5s ease;
+  }
+  
+  
+  /* Profile Card Wrapper */
+  .profile-wrapper-5 {
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+  
+  .profile-wrapper-5::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, #083248 0%, #e69c31 100%);
+    transform: skew(30deg) translateX(125%);
+    opacity: 0.9;
+    transition: all 0.6s ease;
+  }
+  
+  .profile-wrapper-5::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, #083248 0%, #e69c31 100%);
+    transform: skew(30deg) translateX(-125%);
+    opacity: 0.9;
+    transition: all 0.6s ease;
+  }
+  
+  .profile-container-5:hover .profile-wrapper-5::after{
+    transform: skew(30deg) translateX(125%);
+    background: linear-gradient(to right, #bc0e0f 0%, #e69c31 100%);
+    
+  }
+  .profile-container-5:hover .profile-wrapper-5::before{
+    transform: skew(30deg) translateX(-125%);
+    background: linear-gradient(to right, #bc0e0f 0%, #e69c31 100%);
+  }
+  
+  /* Profile Card */
+  .profile-card-5 {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 1rem 10px;
+    position: relative;
+    opacity: 0;
+    transition: all 0.3s ease;
+  }
+  
+  .profile-container-5:hover .profile-card-5 {
+    opacity: 1;
+    transition: all 0.6s ease;
+    transition-delay: 0.2s;
+  }
+
+  /* Profile Picture */
+  .profile-card-5 img {
+    display: block;
+    margin: 0 auto;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin: 1rem 0;
+    border: 2px solid transparent;
+    background-image: linear-gradient(white, white), 
+                      linear-gradient(to right, green, gold);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    /* border: 2px solid #1999; */
+    position: relative;
+  }
+  
+  .profile-card-5  h2 {
+    line-height: 1.2;
+    color: #222;
+  }
+  .profile-card-5  h4 {
+    line-height: 1.5;
+    color: #444;
+  }
+  
+  .profile-card-5  p {
+    line-height: 1.2;
+    color: #333;
+    margin: 10px 0;
+  }
+  
+  /* Profile Button */
+  .profile-card-5 a {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    color: #FFFFFF;
+    padding: 8px 20px;
+    margin-top: 1rem;
+    background: #2371ae;
+    border-radius: 50px;
+    background: linear-gradient(to right, #bb47d4 0%, #2371ae 100%);
+  }
+
+   /* profil card 6 */
+  /* profil 6 */
+  .profile-container-6 {
+    width: 400px;
+    height: 500px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 5px;
+    transition: 1s all ease;
+    margin-left: 40px;
+    margin-right: 40px;
+
+    
+  }
+  
+  .profile-container-6::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../images/team/sabella.jpg') no-repeat center center/cover;
+    z-index: -1;
+    opacity: 1;  
+    transition: all .5s ease-in;
+  }
+  
+  .profile-container-6:hover:before {
+    opacity: 0;
+    transition: all .5s ease;
+  }
+  
+  
+  /* Profile Card Wrapper */
+  .profile-wrapper-6 {
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+  
+  .profile-wrapper-6::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, #083248 0%, #e69c31 100%);
+    transform: skew(30deg) translateX(125%);
+    opacity: 0.9;
+    transition: all 0.6s ease;
+  }
+  
+  .profile-wrapper-6::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, #083248 0%, #e69c31 100%);
+    transform: skew(30deg) translateX(-125%);
+    opacity: 0.9;
+    transition: all 0.6s ease;
+  }
+  
+  .profile-container-6:hover .profile-wrapper-6::after{
+    transform: skew(30deg) translateX(125%);
+    background: linear-gradient(to right, #bc0e0f 0%, #e69c31 100%);
+    
+  }
+  .profile-container-6:hover .profile-wrapper-6::before{
+    transform: skew(30deg) translateX(-125%);
+    background: linear-gradient(to right, #bc0e0f 0%, #e69c31 100%);
+  }
+  
+  /* Profile Card */
+  .profile-card-6 {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 1rem 10px;
+    position: relative;
+    opacity: 0;
+    transition: all 0.3s ease;
+  }
+  
+  .profile-container-6:hover .profile-card-6 {
+    opacity: 1;
+    transition: all 0.6s ease;
+    transition-delay: 0.2s;
+  }
+
+  /* Profile Picture */
+  .profile-card-6 img {
+    display: block;
+    margin: 0 auto;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin: 1rem 0;
+    border: 2px solid transparent;
+    background-image: linear-gradient(white, white), 
+                      linear-gradient(to right, green, gold);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    /* border: 2px solid #1999; */
+    position: relative;
+  }
+  
+  .profile-card-6  h2 {
+    line-height: 1.2;
+    color: #222;
+  }
+  .profile-card-6  h4 {
+    line-height: 1.5;
+    color: #444;
+  }
+  
+  .profile-card-6  p {
+    line-height: 1.2;
+    color: #333;
+    margin: 10px 0;
+  }
+  
+  /* Profile Button */
+  .profile-card-6 a {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    color: #FFFFFF;
+    padding: 8px 20px;
+    margin-top: 1rem;
+    background: #2371ae;
+    border-radius: 50px;
+    background: linear-gradient(to right, #bb47d4 0%, #2371ae 100%);
+  }
