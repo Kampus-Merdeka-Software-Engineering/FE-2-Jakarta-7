@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="assets/images/logo/logomaskotberwarna.png" />
+    <title>Festival | SmutOur</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="header-trave" style="background: radial-gradient(#fff, #ffd6d6);">
+        <nav class="container-navbar">
+            <div class="navbar">
+                <div class="logo">
+                    <a href="index.html"><img src="assets/images/logo/colorlogowordmark.png" alt="SmutOur" width="220 em"></a>
+                </div>
+                <nav>
+                    <ul id="MenuItems">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="team.html">Our Team</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </nav>    
+    </div>
+
+    <!-- Offer -->
+    <div id="pamDetail">
+      <script>
+        // Select the HTML element where you want to display the data
+        const pamContainer = document.getElementById("pamDetail");
+
+        // Extract the id parameter from the URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const id = urlParams.get("id");
+
+        // Fetch the data for the specified id
+        fetch(`http://localhost:8000/pameran/${id}`)
+          .then((response) => response.json())
+          .then((data) => {
+            // Map the data from the response rows
+            const pam = data;
+            const pamElement = `
+                <div class="offer">
+                    <div class="small-container">
+                        <div class="row">
+                            <div class="col-1">
+                                <h1 style="color: #358097;">${pam.data.nama}</h1>
+                            </div>
+                            <div class="col-1">
+                                <center>
+                                    <img src="assets/images/uploads/${pam.data.foto}" class="offer-img" style="border-radius: 50px;">
+                                </center>
+                            </div>
+                            <div class="col-1"></div>
+                                <small>
+                                    ${pam.data.deskripsi}<br>
+                                </small>
+                                <p>Jadwal Kegiatan : ${pam.data.jadwal}</p>
+                            </div>
+                            <div class="col-1"></div>
+                                <a href="pameran-booking.html?id=${pam.data.id}" class="btn" style="color: #fff;">Booking</a>
+                                <a href="${pam.data.gmaps}" class="btn-outline">Lokasi</a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              `;
+            pamContainer.innerHTML = pamElement;
+          });
+      </script>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer-login">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col-2">
+                    <h1 style="font-size: 50px;">SmutOur.</h1>
+                    <p>
+                        Penyedia jasa travel di Sumatera Utara, Indonesia, yang menawarkan
+                        layanan perjalanan termasuk festival, pameran, dan layanan terkait
+                        lainnya. Dengan pelayanan profesional dan berpengalaman, SmutOur
+                        berdedikasi untuk memberikan pengalaman perjalanan tak terlupakan
+                        kepada pelanggan, memungkinkan mereka menjelajahi keindahan alam
+                        dan budaya unik Sumatera Utara.
+                    </p>
+                </div>
+                
+                <div class="footer-col-4" style="text-align: right;">
+                    <h3>Follow Us</h3>
+                    <ul>
+                        <li><a href="">Facebook</a></li>
+                        <li><a href="">Twitter</a></li>
+                        <li><a href="">Instagram</a></li>
+                        <li><a href="">Youtube</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <p class="copyright">Copyright 2023</p>
+        </div>
+    </div>
+
+    <!-- javascript -->
+
+    <script>
+        var MenuItems = document.getElementById("MenuItems");
+        MenuItems.style.maxHeight = "0px";
+        function menutoggle() {
+            if (MenuItems.style.maxHeight == "0px") {
+                MenuItems.style.maxHeight = "200px"
+            }
+            else {
+                MenuItems.style.maxHeight = "0px"
+            }
+        }
+    </script>
+
+
+    <script src="assets/js/jquery-1.11.1.min.js"></script>
+    <script src="assets/js/jquery.backstretch.min.js"></script>
+    <script src="assets/js/scripts.js"></script>
+
+
+</body>
+</html>
